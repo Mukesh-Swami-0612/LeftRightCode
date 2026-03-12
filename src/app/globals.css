@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-logic-bg text-logic-text font-body antialiased;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer components {
+  .split-container {
+    @apply grid grid-cols-1 lg:grid-cols-2 min-h-screen relative overflow-hidden;
+  }
+
+  .zone-logic {
+    @apply relative flex flex-col justify-center border-r border-white/10 p-8 lg:p-16 z-10;
+  }
+
+  .zone-creative {
+    @apply relative flex flex-col justify-center bg-creative-bg p-8 lg:p-16 z-10;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl;
+  }
+
+  .nav-blur {
+    @apply fixed top-0 w-full z-50 bg-black/50 backdrop-blur-xl border-b border-white/10;
+  }
+}
+
+/* Custom Scrollbar for IDE feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.2);
+}
